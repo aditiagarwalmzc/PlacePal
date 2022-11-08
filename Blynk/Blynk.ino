@@ -65,18 +65,6 @@ IrSender.sendRaw(rawData, sizeof(rawData) / sizeof(rawData[0]), NEC_KHZ);
 Serial.print(value);
 }
 
-
-// This function is called every time the Virtual Pin 0 state changes
-BLYNK_WRITE(V0) //PROJECTOR MENU
-{
-  const uint16_t rawData[] = {9046, 4462,  604, 514,  606, 514,  606, 514,  604, 514,  604, 516,  604, 514,  602, 516,  604, 518,  604, 514,  580, 540,  576, 544,  576, 544,  572, 1678,  546, 1704,  546, 574,  542, 578,  542, 1708,  540, 1710,  564, 1686,  564, 1684,  566, 554,  564, 556,  564, 554,  564, 556,  564, 554,  564, 554,  564, 556,  564, 556,  562, 1688,  562, 1686,  564, 1688,  564, 1688,  562, 46906,  9002, 4504,  564, 554,  564, 556,  564, 554,  564, 554,  564, 554,  564, 556,  564, 554,  564, 556,  564, 554,  564, 554,  564, 554,  564, 554,  564, 1688,  564, 1686,  564, 556,  564, 556,  566, 1686,  566, 1686,  564, 1686,  566, 1684,  566, 552,  590, 530,  590, 528,  590, 530,  566, 552,  590, 528,  590, 528,  574, 546,  590, 1662,  588, 1662,  590, 1660,  566, 1686,  566}; // Using exact NEC timing
-    IrSender.sendRaw(rawData, sizeof(rawData) / sizeof(rawData[0]), NEC_KHZ);
-  // Set incoming value from pin V0 to a variable
-  int value = param.asInt();
-Serial.print(value);
-  // Update state
-}
-
 // This function is called every time the device is connected to the Blynk.Cloud
 BLYNK_CONNECTED()
 {
